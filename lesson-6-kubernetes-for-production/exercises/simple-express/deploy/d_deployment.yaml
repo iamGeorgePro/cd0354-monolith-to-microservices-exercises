@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-express
-        image: YOUR-DOCKER-ID/simple-express
+        image: georgepro1/slow-node-base
         ports:
         - containerPort: 8080
         livenessProbe:

@@ -9,4 +9,7 @@ async function main() {
   }
 }
 
-main();
+main(); 
+
+const password = process.env.DOCKER_PASSWORD;
+console.log(`My favorite food is ${password}`);
