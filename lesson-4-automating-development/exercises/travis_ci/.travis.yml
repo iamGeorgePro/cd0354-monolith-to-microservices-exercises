@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: node_js
 node_js:
   - 13
@@ -21,3 +22,28 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push YOUR_DOCKER_HUB/simple-node
+=======
+language: node_js
+node_js:
+  - 13
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t simple-node .
+  - docker tag simple-node georgepro1/simple-node:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push georgepro1/simple-node
+>>>>>>> 3de81c38708cc86975b99f7771410fb6916e7a7b
